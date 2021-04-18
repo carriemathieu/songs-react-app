@@ -31,5 +31,8 @@ const mapStateToProps = (state) => {
 }
 
 // first set of parenth returns function, 2nd set (SongList) invokes func that was returned from 1st func
+// when pass action creators - connect func does special operation on functions inside object, looks at all funcs in cluded in object & wraps in another JS func
+// when we call new JS func, the conenct func calls action creator, automatically takes action that gets returned & automatically calls dispatch for us
+// ***when we call props action creator -> connect func takes action that gets returned & throws into dispatch for us
 export default connect(mapStateToProps, {selectSong})(SongList)
 // mapStateToProps, { selectSong: selectSong } // action creator
